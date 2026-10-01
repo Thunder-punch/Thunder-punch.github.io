@@ -9338,8 +9338,8 @@ aF5:function aF5(){},
 Ro:function Ro(a){this.b=a},
 agy:function agy(){},
 axR:function axR(){},
-xd:function xd(a){this.a=a},
 Ff:function Ff(a){this.a=a},
+xd:function xd(a){this.a=a},
 HP:function HP(a,b){this.b=a
 this.a=b},
 ay_:function ay_(){},
@@ -31394,7 +31394,7 @@ $.bA().m(0,n,o)
 $.aNn=n
 o=n}q=q.d=o.wP(q.c).P8()}else q=o
 s=3
-return A.m(q.nT(B.oW,B.oY,B.L7,B.L8,B.Ma,new A.xd("6LdXptgtAAAAAMIbA6y3fDJllIXgT_Kwfd4DGpvL")),$async$aa7)
+return A.m(q.nT(B.oW,B.oY,B.L7,B.L8,B.Ma,new A.xd("6Le7qtgtAAAAANUvSPUubU5fLs_pHfSVdeTI7p0x")),$async$aa7)
 case 3:q=$.co
 p=(q==null?$.co=$.fc():q).fN("[DEFAULT]")
 A.bN(p,$.eH(),!0)
@@ -51719,8 +51719,8 @@ var $async$l=A.o(function(a,b){if(a===1)return A.p(b,r)
 for(;;)switch(s){case 0:return A.q(null,r)}})
 return A.r($async$l,r)}}
 A.axR.prototype={}
-A.xd.prototype={}
 A.Ff.prototype={}
+A.xd.prototype={}
 A.HP.prototype={}
 A.ay_.prototype={}
 A.ay0.prototype={}
@@ -51737,8 +51737,8 @@ aqV(a,b,c,d,e,f){var s=0,r=A.t(t.H),q,p=this,o,n,m,l
 var $async$nT=A.o(function(g,h){if(g===1)return A.p(h,r)
 for(;;)switch(s){case 0:if(f!=null){o=f instanceof A.HP
 if(o)n="debug"
-else if(f instanceof A.xd)n="recaptcha-v3"
-else{if(!(f instanceof A.Ff))throw A.i(A.de("Invalid web provider: "+f.k(0)))
+else if(f instanceof A.Ff)n="recaptcha-v3"
+else{if(!(f instanceof A.xd))throw A.i(A.de("Invalid web provider: "+f.k(0)))
 n="enterprise"}m=v.G
 m.window.localStorage.setItem("FlutterFire-"+p.gd9().a.a+"-recaptchaType",n)
 m=m.window.localStorage
@@ -51774,8 +51774,8 @@ if(o==null||n==null){o=k.window.sessionStorage.getItem("FlutterFire-"+l.name+"-r
 n=k.window.sessionStorage.getItem("FlutterFire-"+l.name+"-recaptchaSiteKey")}s=o!=null?3:4
 break
 case 3:if(o==="debug"){l=n==null?null:n.length!==0
-m=new A.HP(l===!0?n:null,"")}else if(n!=null)if(o==="recaptcha-v3")m=new A.xd(n)
-else if(o==="enterprise")m=new A.Ff(n)
+m=new A.HP(l===!0?n:null,"")}else if(n!=null)if(o==="recaptcha-v3")m=new A.Ff(n)
+else if(o==="enterprise")m=new A.xd(n)
 else throw A.i(A.de("Invalid recaptcha type: "+o))
 else{s=1
 break}s=5
@@ -51794,8 +51794,8 @@ if(!(o==null))if(o instanceof A.HP){o=o.b
 m=v.G
 if(o!=null)m.FIREBASE_APPCHECK_DEBUG_TOKEN=o
 else m.FIREBASE_APPCHECK_DEBUG_TOKEN=!0
-n=new m.firebase_app_check.ReCaptchaV3Provider("debug")}else if(o instanceof A.xd)n=new v.G.firebase_app_check.ReCaptchaV3Provider(o.a)
-else if(o instanceof A.Ff)n=new v.G.firebase_app_check.ReCaptchaEnterpriseProvider(o.a)
+n=new m.firebase_app_check.ReCaptchaV3Provider("debug")}else if(o instanceof A.Ff)n=new v.G.firebase_app_check.ReCaptchaV3Provider(o.a)
+else if(o instanceof A.xd)n=new v.G.firebase_app_check.ReCaptchaEnterpriseProvider(o.a)
 else A.X(A.bF("A `WebProvider` is required for `activate()` to initialise App Check on the web platform",null))
 l=t.SF.a({provider:n})
 o=v.G.firebase_app_check
@@ -107809,7 +107809,7 @@ q(A.agx,A.agw)
 q(A.aaS,A.aaR)
 q(A.ab9,A.ab8)
 p(A.agy,[A.rp,A.Rp])
-p(A.axR,[A.xd,A.Ff,A.HP])
+p(A.axR,[A.Ff,A.xd,A.HP])
 q(A.ay0,A.ay_)
 q(A.qy,A.iH)
 p(A.qy,[A.Rs,A.Cw])
