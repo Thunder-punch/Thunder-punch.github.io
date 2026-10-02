@@ -103,6 +103,9 @@ flutter:
     - assets/fonts/inter/OFL.txt
     # Read for the version in Settings > About (lib/domain/app_version.dart).
     - pubspec.yaml
+    # Drawn icons for service types, fuel and expenses (PNG from the SVGs in
+    # assets/icons/src, made by main/tools/render_icons.py).
+    - assets/icons/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
