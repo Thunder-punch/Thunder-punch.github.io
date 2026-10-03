@@ -1,11 +1,11 @@
 {
-    "name": "Oilbook Community",
-    "short_name": "Oilbook",
+    "name": "Checkpit Community",
+    "short_name": "Checkpit",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0B7A6B",
     "theme_color": "#0B7A6B",
-    "description": "Oilbook community: talk with owners of the same car.",
+    "description": "Checkpit community: talk with owners of the same car.",
     "orientation": "any",
     "prefer_related_applications": false,
     "icons": [
