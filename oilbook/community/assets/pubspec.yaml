@@ -107,8 +107,10 @@ flutter:
     # Read for the version in Settings > About (lib/domain/app_version.dart).
     - pubspec.yaml
     # Drawn icons for service types, fuel and expenses (PNG from the SVGs in
-    # assets/icons/src, made by main/tools/render_icons.py).
+    # assets/icons/src, made by main/tools/render_icons.py), and their dark
+    # mode copies.
     - assets/icons/
+    - assets/icons/dark/
     # Launch screen art (lib/ui/launch_splash.dart, from assets/splash/src by
     # main/tools/render_splash.py).
     - assets/splash/
