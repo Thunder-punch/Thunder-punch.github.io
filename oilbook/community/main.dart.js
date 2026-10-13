@@ -49459,7 +49459,7 @@ gCR(){return"Load more"},
 gCS(){return"New post"},
 gMz(){return"Title"},
 gMx(){return"What do you want to share?"},
-gMy(){return"Posts unrelated to cars, ads, or abusive language break the rules and may be hidden or removed."},
+gMy(){return"Spam, ads and abusive posts may be hidden automatically. Posts unrelated to cars are reviewed by our team and may be hidden or removed."},
 gMe(){return"Model"},
 gMd(){return"All models"},
 gMw(){return"Post"},
@@ -49568,7 +49568,7 @@ gCR(){return"Cargar m\xe1s"},
 gCS(){return"Nueva publicaci\xf3n"},
 gMz(){return"T\xedtulo"},
 gMx(){return"\xbfQu\xe9 quieres compartir?"},
-gMy(){return"Las publicaciones sin relaci\xf3n con autos, los anuncios o el lenguaje ofensivo incumplen las normas y pueden ocultarse o eliminarse."},
+gMy(){return"El spam, los anuncios y las publicaciones ofensivas pueden ocultarse autom\xe1ticamente. Nuestro equipo revisa las publicaciones sin relaci\xf3n con autos y puede ocultarlas o eliminarlas."},
 gMe(){return"Modelo"},
 gMd(){return"Todos los modelos"},
 gMw(){return"Publicar"},
@@ -49677,7 +49677,7 @@ gCR(){return"\ub354 \ubd88\ub7ec\uc624\uae30"},
 gCS(){return"\uae00\uc4f0\uae30"},
 gMz(){return"\uc81c\ubaa9"},
 gMx(){return"\ubb34\uc5c7\uc744 \ub098\ub204\uace0 \uc2f6\ub098\uc694?"},
-gMy(){return"\ucc28\ub7c9\uacfc \uad00\uacc4\uc5c6\ub294 \uae00, \uad11\uace0, \uc695\uc124 \ub4f1 \uaddc\uce59\uc744 \uc5b4\uae34 \uae00\uc740 \uc228\uae40 \ub610\ub294 \uc0ad\uc81c \uc870\uce58\ub429\ub2c8\ub2e4."},
+gMy(){return"\uc2a4\ud338, \uad11\uace0, \uc695\uc124\uc774 \ub2f4\uae34 \uae00\uc740 \uc790\ub3d9\uc73c\ub85c \uc228\uae40 \ucc98\ub9ac\ub420 \uc218 \uc788\uc2b5\ub2c8\ub2e4. \ucc28\ub7c9\uacfc \uad00\uacc4\uc5c6\ub294 \uae00\uc740 \uc6b4\uc601\ud300\uc774 \uac80\ud1a0\ud55c \ub4a4 \uc228\uae30\uac70\ub098 \uc0ad\uc81c\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4."},
 gMe(){return"\ubaa8\ub378"},
 gMd(){return"\ubaa8\ub4e0 \ubaa8\ub378"},
 gMw(){return"\uc62c\ub9ac\uae30"},
@@ -50783,7 +50783,7 @@ m.push(A.Z8(!1,c.d,A.rC(b,b,b,b,b,b,b,b,!0,b,b,b,b,b,c.w,b,b,b,b,b,b,b,b,b,b,b,b
 m.push(B.e6)
 o=a.gMx()
 n=a.gMy()
-m.push(A.Z8(!1,c.e,A.rC(!0,b,b,b,b,b,b,b,!0,b,b,b,b,b,c.x,b,b,b,b,b,b,b,b,b,4,b,n,b,b,b,b,b,b,b,b,b,b,b,b,b,o,!0,!0,!1,b,b,b,b,b,b,b,b,b,b,b,b,b,b),2000,20,6,new A.aCC(c),b,b))
+m.push(A.Z8(!1,c.e,A.rC(!0,b,b,b,b,b,b,b,!0,b,b,b,b,b,c.x,b,b,b,b,b,b,b,b,b,8,b,n,b,b,b,b,b,b,b,b,b,b,b,b,b,o,!0,!0,!1,b,b,b,b,b,b,b,b,b,b,b,b,b,b),2000,20,6,new A.aCC(c),b,b))
 m.push(B.f7)
 o=s.ok
 m.push(A.aI(a.gMv(),b,b,b,o.x,b,b))
