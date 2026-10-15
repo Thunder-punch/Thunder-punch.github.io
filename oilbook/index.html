@@ -3,32 +3,207 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Checkpit</title>
-<meta name="description" content="Checkpit is a car maintenance and fuel log for Android.">
+<title>Checkpit: Car Maintenance Log app for Android</title>
+<meta name="description" content="Checkpit is a free car maintenance and fuel log app for Android. Log fill-ups, services and costs, get reminders by date or mileage, and keep your records without an account.">
+<link rel="canonical" href="https://thunder-punch.github.io/oilbook/">
+<link rel="icon" type="image/png" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<meta name="theme-color" content="#222831">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Checkpit">
+<meta property="og:title" content="Checkpit: Car Maintenance Log">
+<meta property="og:description" content="Log fuel, services and costs, and get reminded before your next oil change, registration or inspection. No account needed.">
+<meta property="og:url" content="https://thunder-punch.github.io/oilbook/">
+<meta property="og:image" content="https://thunder-punch.github.io/oilbook/img/og-1024x500.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Checkpit: Car Maintenance Log",
+  "alternateName": "Checkpit",
+  "operatingSystem": "ANDROID",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "A car maintenance and fuel log. Log fill-ups, services and costs, and get reminders by date or mileage. No account needed.",
+  "url": "https://thunder-punch.github.io/oilbook/",
+  "image": "https://thunder-punch.github.io/oilbook/img/icon-192.png",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.oilbook.app",
+  "inLanguage": ["en", "es", "ko"],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "sameAs": ["https://www.facebook.com/checkpit", "https://x.com/CheckpitApp", "https://www.youtube.com/@Checkpit"],
+  "author": { "@type": "Organization", "name": "Thunder-punch", "email": "jtw1508@naver.com" }
+}
+</script>
 <style>
-:root{--bg:#fafafa;--fg:#1c1c1c;--muted:#5f6368;--link:#1a5fb4;--card:#fff;--line:#e3e3e3}
-@media (prefers-color-scheme:dark){:root{--bg:#161616;--fg:#ececec;--muted:#a8a8a8;--link:#8ab4f8;--card:#1f1f1f;--line:#333}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:680px;margin:0 auto;padding:40px 16px}h1{font-size:1.8rem;margin:0 0 4px}h2{font-size:1.2rem;margin:32px 0 8px}
-p{margin:8px 0}.muted{color:var(--muted)}a{color:var(--link)}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:12px 0}
-ul{padding-left:20px}footer{margin-top:40px;font-size:.9rem;color:var(--muted)}
+/* Inter (SIL OFL 1.1, fonts/OFL.txt), served from this site so no visitor data goes to a font CDN. */
+@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(fonts/Inter-Regular.woff2) format('woff2')}
+@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(fonts/Inter-SemiBold.woff2) format('woff2')}
+@font-face{font-family:Inter;font-weight:700;font-display:swap;src:url(fonts/Inter-Bold.woff2) format('woff2')}
+:root{--ink:#222831;--ink2:#393E46;--sun:#FFD369;--paper:#EEEEEE;--muted:#B9BDC4;--line:#4A5059}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--paper);font:17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--sun)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{padding:20px 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--paper);text-decoration:none;font-weight:700;font-size:20px}
+.brand img{width:36px;height:36px;border-radius:9px}
+nav a{color:var(--muted);text-decoration:none;font-size:15px;margin-left:18px}
+nav a:hover{color:var(--paper)}
+.hero{padding:40px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,60px);line-height:1.08;margin:0 0 16px;font-weight:700;letter-spacing:-.02em}
+.hero h1 mark{background:var(--sun);color:var(--ink);padding:0 .15em;border-radius:6px}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);margin:0 0 28px;max-width:34em}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--sun);color:var(--ink);font-weight:700;font-size:18px;text-decoration:none;padding:14px 26px;border-radius:14px}
+.cta svg{width:22px;height:22px}
+.small{font-size:14px;color:var(--muted);margin-top:12px}
+.phone{justify-self:center;width:min(300px,78vw);border:10px solid #111418;border-radius:36px;overflow:hidden;background:#111418;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.phone img{display:block;width:100%;height:auto}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,3.6vw,34px);margin:0 0 8px;font-weight:700;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--ink2);border-radius:18px;padding:22px}
+.card h3{margin:0 0 6px;font-size:19px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.card b{color:var(--sun);font-weight:600}
+.shots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+.shots figure{flex:0 0 auto;width:220px;margin:0;scroll-snap-align:start}
+.shots img{width:100%;height:auto;border-radius:18px;display:block;background:#111418}
+.shots figcaption{font-size:14px;color:var(--muted);margin-top:8px;text-align:center}
+.faq details{background:var(--ink2);border-radius:14px;padding:16px 20px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin:10px 0 0;color:var(--muted)}
+.end{text-align:center}
+.end h2 mark{background:var(--sun);color:var(--ink);padding:0 .15em;border-radius:6px}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:14px;color:var(--muted)}
+.follow{margin:0 0 10px;color:var(--paper);font-weight:600}
+.social{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.social a{color:var(--ink);background:var(--sun);text-decoration:none;font-weight:600;padding:8px 16px;border-radius:999px}
+footer ul{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:8px 20px}
+footer a{color:var(--muted)}
+@media (max-width:760px){
+  nav{display:none}
+  .hero{padding:16px 0 40px}
+  .hero .wrap{grid-template-columns:1fr;gap:32px}
+  .grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/icon-192.png" alt="" width="36" height="36">Checkpit</a>
+    <nav><a href="#features">Features</a><a href="#faq">FAQ</a><a href="community/">Community</a></nav>
+  </div>
+</header>
+
 <main>
-<p><a href="../">&larr; All apps</a></p>
-<h1>Checkpit</h1>
-<p class="muted">Car maintenance and fuel log for Android</p>
-<p>Log fill-ups, service, repairs and other costs for each of your vehicles, and set reminders by date or mileage. Checkpit works without an account and keeps your records on your device. If you sign in with Google, your records are also backed up to your account so you can restore them on a new phone. Backup, restore and CSV export are free.</p>
-<h2>Legal</h2>
-<ul>
-<li><a href="https://mirage-centipede-a12.notion.site/Oilbook-Privacy-policy-3ea21347a0b38114b0dfda39a0142aa0">Privacy Policy</a></li>
-<li><a href="https://mirage-centipede-a12.notion.site/Oilbook-Terms-of-use-3ea21347a0b381119f4acd703a5d60d7">Terms of Use</a></li>
-<li><a href="https://mirage-centipede-a12.notion.site/Oilbook-Delete-account-3ea21347a0b381349fcce23ce81fdda6">Delete your account</a></li>
-</ul>
-<h2>Support</h2>
-<p>Questions or problems: <a href="mailto:jtw1508@naver.com?subject=Checkpit">jtw1508@naver.com</a></p>
-<footer>&copy; 2026 Thunder-punch</footer>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Car care, <mark>checked.</mark></h1>
+      <p class="lead">Checkpit is a car maintenance log for Android. Record fill-ups, services and costs, and get reminded before your next oil change, registration or inspection is due. No account needed to start.</p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.oilbook.app&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8 1 .6l15.6-9.2c.4-.3.4-.9 0-1.2L5 2.2c-.5-.2-1 .1-1 .6z"/></svg>
+        Get it on Google Play
+      </a>
+      <p class="small">Free to download. Android only. English, Spanish and Korean.</p>
+    </div>
+    <div class="phone"><img src="img/03-reminders.webp" alt="Checkpit reminders screen with oil filter, wiper blades and tire rotation due dates" width="540" height="942"></div>
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <h2>Everything your car needs, in one log</h2>
+    <p class="sub">Simple to start, with the details when you want them.</p>
+    <div class="grid">
+      <div class="card"><h3>Reminders</h3><p>By date, by mileage, or <b>whichever comes first</b>. Notifications 7 days before and on the due date.</p></div>
+      <div class="card"><h3>Quick entry</h3><p>Snap a fuel receipt to fill in the date, total, volume and price. Check it, then save.</p></div>
+      <div class="card"><h3>Renewals</h3><p>Registration, inspection and insurance. MOT and road tax in the UK, rego and CTP in Australia.</p></div>
+      <div class="card"><h3>History</h3><p>Every fill-up, service and expense in one list by date, with search. Log several items in one service visit.</p></div>
+      <div class="card"><h3>Stats</h3><p>Spending by month and by type. Fuel economy in MPG (US or UK), km/L or L/100 km, with a trend chart.</p></div>
+      <div class="card"><h3>Community</h3><p>Ask other drivers and share tips. Maintenance tips with sources and a weekly recall roundup from the Checkpit team.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>See it in the app</h2>
+    <p class="sub">Real screens from Checkpit on Android.</p>
+    <div class="shots">
+      <figure><img src="img/02-history.webp" alt="History list of fill-ups and services" width="540" height="942" loading="lazy"><figcaption>History</figcaption></figure>
+      <figure><img src="img/03-reminders.webp" alt="Reminders by date and mileage" width="540" height="942" loading="lazy"><figcaption>Reminders</figcaption></figure>
+      <figure><img src="img/04-stats.webp" alt="Monthly spending chart" width="540" height="942" loading="lazy"><figcaption>Spending</figcaption></figure>
+      <figure><img src="img/05-fuel-economy.webp" alt="Fuel economy trend chart" width="540" height="942" loading="lazy"><figcaption>Fuel economy</figcaption></figure>
+      <figure><img src="img/06-community.webp" alt="Community board with tips and recall news" width="540" height="942" loading="lazy"><figcaption>Community</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Your data stays yours</h2>
+    <p class="sub">Records live on your phone. Backup and export are free.</p>
+    <div class="grid">
+      <div class="card"><h3>No sign-up</h3><p>Start without an account. Sign in with Google any time for an automatic cloud backup you can restore on a new phone.</p></div>
+      <div class="card"><h3>Backup and CSV</h3><p>Save a backup file anywhere you like, with or without an account. Export all your records to CSV at any time.</p></div>
+      <div class="card"><h3>No ads while you type</h3><p>The screens where you enter records have no ads. Receipt photos are read by Google AI and not stored.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <h2>FAQ</h2>
+    <p class="sub">The short answers.</p>
+    <details><summary>Is Checkpit free?</summary><p>Yes. Your first vehicle is free. Each extra vehicle is a one-time purchase ($2.99 in the US; local prices vary), with no subscription. The app shows ads; any purchase removes full-screen ads, and the small banner stays.</p></details>
+    <details><summary>Do I need an account?</summary><p>No. Your records are kept on your phone. Signing in with Google is optional and adds an automatic cloud backup.</p></details>
+    <details><summary>Is there an iPhone version?</summary><p>No. Checkpit is for Android only, on Google Play. The community board also works in a web browser.</p></details>
+    <details><summary>Which units and countries does it support?</summary><p>Miles or kilometers, gallons or liters, and fuel economy in MPG (US or UK), km/L or L/100 km. Renewal reminders cover the US, UK, Canada and Australia.</p></details>
+    <details><summary>Can I move my records from another app?</summary><p>Yes. Fill in the Checkpit CSV template and import it. You can also export everything to CSV at any time.</p></details>
+    <details><summary>What happens to receipt photos?</summary><p>They are read by Google AI to fill in the form and are not stored. To read them on your phone only, turn this off in Settings &gt; Privacy.</p></details>
+  </div>
+</section>
+
+<section class="end">
+  <div class="wrap">
+    <h2>Car care, <mark>checked.</mark></h2>
+    <p class="sub">Free on Google Play.</p>
+    <a class="cta" href="https://play.google.com/store/apps/details?id=com.oilbook.app&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8 1 .6l15.6-9.2c.4-.3.4-.9 0-1.2L5 2.2c-.5-.2-1 .1-1 .6z"/></svg>
+      Get it on Google Play
+    </a>
+  </div>
+</section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <p class="follow">Follow Checkpit</p>
+    <div class="social">
+      <a href="https://www.facebook.com/checkpit" rel="me">Facebook</a>
+      <a href="https://x.com/CheckpitApp" rel="me">X</a>
+      <a href="https://www.youtube.com/@Checkpit" rel="me">YouTube</a>
+      <!-- Add each account once it exists (one line each, same style):
+      <a href="https://www.threads.com/@..." rel="me">Threads</a>
+      and add the same URLs to "sameAs" in the JSON-LD above. -->
+    </div>
+    <ul>
+      <li><a href="community/">Community</a></li>
+      <li><a href="https://mirage-centipede-a12.notion.site/Oilbook-Privacy-policy-3ea21347a0b38114b0dfda39a0142aa0">Privacy Policy</a></li>
+      <li><a href="https://mirage-centipede-a12.notion.site/Oilbook-Terms-of-use-3ea21347a0b381119f4acd703a5d60d7">Terms of Use</a></li>
+      <li><a href="https://mirage-centipede-a12.notion.site/Oilbook-Delete-account-3ea21347a0b381349fcce23ce81fdda6">Delete your account</a></li>
+      <li><a href="mailto:jtw1508@naver.com?subject=Checkpit">jtw1508@naver.com</a></li>
+    </ul>
+    <p>Checkpit reminders are a convenience, not professional advice. Always follow your vehicle's owner's manual.</p>
+    <p>&copy; 2026 Thunder-punch. Google Play is a trademark of Google LLC.</p>
+  </div>
+</footer>
 </body>
 </html>
