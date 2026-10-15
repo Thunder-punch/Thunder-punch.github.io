@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Checkpit: Car Maintenance Log app for Android</title>
-<meta name="description" content="Checkpit is a free car maintenance and fuel log app for Android. Log fill-ups, services and costs, get reminders by date or mileage, and keep your records without an account.">
+<meta name="description" content="Checkpit is a free car maintenance and fuel log app for Android. Log fill-ups, services and costs, and get reminders by date or mileage. No account needed.">
 <link rel="canonical" href="https://thunder-punch.github.io/oilbook/">
 <link rel="icon" type="image/png" href="img/icon-192.png">
 <link rel="apple-touch-icon" href="img/icon-192.png">
@@ -15,7 +15,11 @@
 <meta property="og:description" content="Log fuel, services and costs, and get reminded before your next oil change, registration or inspection. No account needed.">
 <meta property="og:url" content="https://thunder-punch.github.io/oilbook/">
 <meta property="og:image" content="https://thunder-punch.github.io/oilbook/img/og-1024x500.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Checkpit: Car Maintenance Log">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CheckpitApp">
 <link rel="preload" href="fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {
@@ -28,6 +32,7 @@
   "description": "A car maintenance and fuel log. Log fill-ups, services and costs, and get reminders by date or mileage. No account needed.",
   "url": "https://thunder-punch.github.io/oilbook/",
   "image": "https://thunder-punch.github.io/oilbook/img/icon-192.png",
+  "screenshot": "https://thunder-punch.github.io/oilbook/img/03-reminders.webp",
   "installUrl": "https://play.google.com/store/apps/details?id=com.oilbook.app",
   "inLanguage": ["en", "es", "ko"],
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -55,6 +60,7 @@ nav a:hover{color:var(--paper)}
 .hero{padding:40px 0 56px}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 .hero h1{font-size:clamp(38px,6vw,60px);line-height:1.08;margin:0 0 16px;font-weight:700;letter-spacing:-.02em}
+.hero h1 .eyebrow{display:block;font-size:15px;line-height:1.4;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sun);margin:0 0 14px}
 .hero h1 mark{background:var(--sun);color:var(--ink);padding:0 .15em;border-radius:6px}
 .lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);margin:0 0 28px;max-width:34em}
 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--sun);color:var(--ink);font-weight:700;font-size:18px;text-decoration:none;padding:14px 26px;border-radius:14px}
@@ -105,7 +111,7 @@ footer a{color:var(--muted)}
 <div class="hero">
   <div class="wrap">
     <div>
-      <h1>Car care, <mark>checked.</mark></h1>
+      <h1><span class="eyebrow">Checkpit · Car maintenance log for Android</span>Car care, <mark>checked.</mark></h1>
       <p class="lead">Checkpit is a car maintenance log for Android. Record fill-ups, services and costs, and get reminded before your next oil change, registration or inspection is due. No account needed to start.</p>
       <a class="cta" href="https://play.google.com/store/apps/details?id=com.oilbook.app&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8 1 .6l15.6-9.2c.4-.3.4-.9 0-1.2L5 2.2c-.5-.2-1 .1-1 .6z"/></svg>
