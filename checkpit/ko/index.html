@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkpit: 안드로이드 차량 정비 기록 앱</title>
+<meta name="description" content="Checkpit은 안드로이드용 무료 차량 정비·주유 기록 앱입니다. 주유, 정비, 비용을 기록하고 날짜나 주행거리로 알림을 받으세요. 계정이 없어도 됩니다.">
+<link rel="canonical" href="https://thunder-punch.github.io/checkpit/ko/">
+<link rel="alternate" hreflang="en" href="https://thunder-punch.github.io/checkpit/">
+<link rel="alternate" hreflang="es" href="https://thunder-punch.github.io/checkpit/es/">
+<link rel="alternate" hreflang="ko" href="https://thunder-punch.github.io/checkpit/ko/">
+<link rel="alternate" hreflang="x-default" href="https://thunder-punch.github.io/checkpit/">
+<link rel="icon" type="image/png" href="../img/icon-192.png">
+<link rel="apple-touch-icon" href="../img/icon-192.png">
+<meta name="theme-color" content="#222831">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Checkpit">
+<meta property="og:title" content="Checkpit: 차량 정비 기록">
+<meta property="og:description" content="주유, 정비, 비용을 기록하고 다음 엔진오일 교환, 등록 갱신, 검사 전에 알림을 받으세요. 계정이 없어도 됩니다.">
+<meta property="og:url" content="https://thunder-punch.github.io/checkpit/ko/">
+<meta property="og:image" content="https://thunder-punch.github.io/checkpit/img/og-1024x500.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Checkpit: 차량 정비 기록">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CheckpitApp">
+<link rel="preload" href="../fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Checkpit: Car Maintenance Log",
+  "alternateName": "Checkpit",
+  "operatingSystem": "ANDROID",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "차량 정비·주유 기록 앱. 주유, 정비, 비용을 기록하고 날짜나 주행거리로 알림을 받으세요. 계정이 없어도 됩니다.",
+  "url": "https://thunder-punch.github.io/checkpit/ko/",
+  "image": "https://thunder-punch.github.io/checkpit/img/icon-192.png",
+  "screenshot": "https://thunder-punch.github.io/checkpit/img/03-reminders.webp",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.oilbook.app",
+  "inLanguage": ["en", "es", "ko"],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "sameAs": ["https://www.youtube.com/@Checkpit", "https://www.instagram.com/checkpitapp/", "https://www.facebook.com/checkpit", "https://x.com/CheckpitApp", "https://www.threads.com/@checkpitapp"],
+  "author": { "@type": "Organization", "name": "Twobridges", "email": "jtw1508@naver.com" }
+}
+</script>
+<style>
+/* Inter (SIL OFL 1.1, fonts/OFL.txt), served from this site so no visitor data goes to a font CDN. */
+@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(../fonts/Inter-Regular.woff2) format('woff2')}
+@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(../fonts/Inter-SemiBold.woff2) format('woff2')}
+@font-face{font-family:Inter;font-weight:700;font-display:swap;src:url(../fonts/Inter-Bold.woff2) format('woff2')}
+:root{--ink:#222831;--ink2:#393E46;--sun:#FFD369;--paper:#EEEEEE;--muted:#B9BDC4;--line:#4A5059}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html[lang="ko"]{word-break:keep-all}
+body{margin:0;background:var(--ink);color:var(--paper);font:17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--sun)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{padding:20px 0}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--paper);text-decoration:none;font-weight:700;font-size:20px}
+.brand img{width:36px;height:36px;border-radius:9px}
+nav a{color:var(--muted);text-decoration:none;font-size:15px;margin-left:18px}
+.hdr{display:flex;align-items:center;gap:18px}
+.lang{display:flex;gap:2px;font-size:14px}
+.lang a{color:var(--muted);text-decoration:none;padding:6px 9px;border-radius:8px}
+.lang a:hover{color:var(--paper)}
+.lang a[aria-current]{color:var(--ink);background:var(--sun);font-weight:600}
+nav a:hover{color:var(--paper)}
+.hero{padding:40px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,60px);line-height:1.08;margin:0 0 16px;font-weight:700;letter-spacing:-.02em}
+.hero h1 .eyebrow{display:block;font-size:15px;line-height:1.4;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sun);margin:0 0 14px}
+.hero h1 mark{background:var(--sun);color:var(--ink);padding:0 .15em;border-radius:6px}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);margin:0 0 28px;max-width:34em}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--sun);color:var(--ink);font-weight:700;font-size:18px;text-decoration:none;padding:14px 26px;border-radius:14px}
+.cta svg{width:22px;height:22px}
+.small{font-size:14px;color:var(--muted);margin-top:12px}
+.phone{justify-self:center;width:min(300px,78vw);border:10px solid #111418;border-radius:36px;overflow:hidden;background:#111418;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.phone img{display:block;width:100%;height:auto}
+.vid{position:relative;aspect-ratio:9/16;background:#111418}
+.vid video{display:block;width:100%;height:100%;object-fit:cover}
+.snd{position:absolute;right:12px;bottom:12px;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:rgba(34,40,49,.85);color:#FFD369;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.snd svg{width:22px;height:22px;display:block}
+.snd .on,.snd[aria-pressed="true"] .off{display:none}
+.snd[aria-pressed="true"] .on{display:block}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,3.6vw,34px);margin:0 0 8px;font-weight:700;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--ink2);border-radius:18px;padding:22px}
+.card h3{margin:0 0 6px;font-size:19px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.card b{color:var(--sun);font-weight:700}
+.shots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+.shots figure{flex:0 0 auto;width:220px;margin:0;scroll-snap-align:start}
+.shots img{width:100%;height:auto;border-radius:18px;display:block;background:#111418}
+.shots figcaption{font-size:14px;color:var(--muted);margin-top:8px;text-align:center}
+.faq details{background:var(--ink2);border-radius:14px;padding:16px 20px;margin:0 0 10px}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{margin:10px 0 0;color:var(--muted)}
+.end{text-align:center}
+.end h2 mark{background:var(--sun);color:var(--ink);padding:0 .15em;border-radius:6px}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:14px;color:var(--muted)}
+.follow{margin:0 0 10px;color:var(--paper);font-weight:600}
+.social{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#fff}
+.social svg{width:26px;height:26px;display:block}
+footer ul{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:8px 20px}
+footer a{color:var(--muted)}
+@media (max-width:760px){
+  nav{display:none}
+  .hero{padding:16px 0 40px}
+  .hero .wrap{grid-template-columns:1fr;gap:32px}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="./"><img src="../img/icon-192.png" alt="" width="36" height="36">Checkpit</a>
+    <div class="hdr">
+      <nav><a href="#features">기능</a><a href="#faq">자주 묻는 질문</a><a href="../../oilbook/community/">커뮤니티</a></nav>
+      <div class="lang" aria-label="언어"><a href="../" hreflang="en" lang="en">English</a><a href="../es/" hreflang="es" lang="es">Español</a><a href="./" hreflang="ko" lang="ko" aria-current="page">한국어</a></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1><span class="eyebrow">Checkpit · 안드로이드 차량 정비 기록</span>차 관리, <mark>체크 완료.</mark></h1>
+      <p class="lead">Checkpit은 안드로이드용 차량 정비 기록 앱입니다. 주유, 정비, 비용을 기록하고 다음 엔진오일 교환, 등록 갱신, 검사 날짜가 오기 전에 알림을 받으세요. 계정 없이 바로 시작할 수 있습니다.</p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.oilbook.app&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding%26utm_content%3Dko">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8 1 .6l15.6-9.2c.4-.3.4-.9 0-1.2L5 2.2c-.5-.2-1 .1-1 .6z"/></svg>
+        Google Play에서 받기
+      </a>
+      <p class="small">무료 다운로드. 안드로이드 전용. 영어, 스페인어, 한국어 지원.</p>
+    </div>
+    <div class="phone"><div class="vid"><video autoplay muted loop playsinline preload="auto" poster="../img/video-b-poster.webp" width="540" height="960" aria-label="Checkpit 영상: 차 이야기와 자동차 소식"><source src="../img/video-b.mp4" type='video/mp4; codecs="avc1.64001F, mp4a.40.2"'><source src="../img/video-b.webm" type="video/webm"></video><button class="snd" type="button" aria-pressed="false" aria-label="소리"><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z" fill="currentColor"/><path d="m23 9-6 6M17 9l6 6"/></svg><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></button></div></div>
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <h2>차에 드는 돈도, 기록하는 시간도 줄이세요</h2>
+    <p class="sub">작은 정비를 제때 하면 큰 수리보다 적게 듭니다. Checkpit이 일정을 챙겨 드립니다.</p>
+    <div class="grid">
+      <div class="card"><h3>비용이 커지기 전에</h3><p><b>7일 전</b>과 당일에 알려 드려서 작은 정비가 큰 수리비로 번지지 않게 합니다.</p></div>
+      <div class="card"><h3>사진 한 장으로 주유 기록</h3><p><b>영수증을 찍으면</b> 날짜, 금액, 주유량, 단가가 채워집니다. 확인하고 저장하세요.</p></div>
+      <div class="card"><h3>연체료 걱정 없이</h3><p>자동차 등록, 검사, 보험 갱신을 <b>기한 전에</b> 알려 드립니다.</p></div>
+      <div class="card"><h3>돈이 어디로 가는지 한눈에</h3><p>월별·항목별 지출과 연비 추이(MPG, km/L, L/100km)를 보여 줘서 <b>연비가 나빠지면 바로 알아챌 수 있습니다</b>.</p></div>
+      <div class="card"><h3>차를 팔 때 빠짐없는 이력</h3><p>주유, 정비, 비용을 모두 한 목록에서 검색할 수 있습니다. 구매자에게 <b>완전한 정비 기록</b>을 보여 주세요.</p></div>
+      <div class="card"><h3>리콜 소식도 놓치지 않게</h3><p><b>매주 리콜 모음</b>과 출처가 있는 정비 상식, 다른 운전자에게 물어볼 수 있는 게시판이 있습니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>앱 화면 보기</h2>
+    <p class="sub">안드로이드에서 찍은 실제 Checkpit 화면입니다(영어).</p>
+    <div class="shots">
+      <figure><img src="../img/02-history.webp" alt="주유·정비 기록 목록" width="540" height="942" loading="lazy"><figcaption>기록</figcaption></figure>
+      <figure><img src="../img/03-reminders.webp" alt="날짜·주행거리 알림" width="540" height="942" loading="lazy"><figcaption>알림</figcaption></figure>
+      <figure><img src="../img/04-stats.webp" alt="월별 지출 차트" width="540" height="942" loading="lazy"><figcaption>지출</figcaption></figure>
+      <figure><img src="../img/05-fuel-economy.webp" alt="연비 추이 차트" width="540" height="942" loading="lazy"><figcaption>연비</figcaption></figure>
+      <figure><img src="../img/06-community.webp" alt="정비 팁과 리콜 소식이 있는 커뮤니티 게시판" width="540" height="942" loading="lazy"><figcaption>커뮤니티</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>내 데이터는 내 것</h2>
+    <p class="sub">기록은 휴대폰에 저장됩니다. 백업과 내보내기는 무료입니다.</p>
+    <div class="grid">
+      <div class="card"><h3>가입 없이</h3><p><b>계정 없이 시작하세요.</b> 언제든 Google로 로그인하면 클라우드에 자동 백업되고 새 휴대폰에서 복원할 수 있습니다.</p></div>
+      <div class="card"><h3>백업과 CSV</h3><p>계정이 있든 없든 원하는 곳에 백업 파일을 저장할 수 있습니다. <b>모든 기록을 언제든 CSV로 내보내세요</b>.</p></div>
+      <div class="card"><h3>입력할 때는 광고 없음</h3><p>기록을 입력하는 화면에는 <b>광고가 없습니다</b>. 영수증 사진은 Google AI가 읽고 저장하지 않습니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <h2>자주 묻는 질문</h2>
+    <p class="sub">짧게 답합니다.</p>
+    <details><summary>Checkpit은 무료인가요?</summary><p>네. 첫 차량은 무료입니다. 차량을 추가할 때마다 한 번 결제하며(미국 $2.99, 나라마다 가격이 다름) 구독은 없습니다. 앱에는 광고가 나오고, 한 번이라도 결제하면 전면 광고가 사라지며 작은 배너는 남습니다.</p></details>
+    <details><summary>계정이 꼭 있어야 하나요?</summary><p>아니요. 기록은 휴대폰에 저장됩니다. Google 로그인은 선택이며, 로그인하면 클라우드 자동 백업이 더해집니다.</p></details>
+    <details><summary>아이폰용도 있나요?</summary><p>아니요. Checkpit은 Google Play의 안드로이드 전용 앱입니다. 커뮤니티 게시판은 웹 브라우저에서도 쓸 수 있습니다.</p></details>
+    <details><summary>어떤 단위와 나라를 지원하나요?</summary><p>마일·킬로미터, 갤런·리터, 연비는 MPG(미국·영국), km/L, L/100km를 지원합니다. 갱신 알림은 미국, 영국, 캐나다, 호주, 멕시코를 지원합니다.</p></details>
+    <details><summary>다른 앱의 기록을 옮길 수 있나요?</summary><p>네. Checkpit CSV 양식에 채워 가져오면 됩니다. 언제든 모든 기록을 CSV로 내보낼 수도 있습니다.</p></details>
+    <details><summary>영수증 사진은 어떻게 되나요?</summary><p>Google AI가 읽어 입력 칸을 채우고 저장하지 않습니다. 휴대폰 안에서만 읽게 하려면 설정 &gt; 개인정보에서 끄세요.</p></details>
+  </div>
+</section>
+
+<section class="end">
+  <div class="wrap">
+    <h2>차 관리, <mark>체크 완료.</mark></h2>
+    <p class="sub">Google Play에서 무료.</p>
+    <a class="cta" href="https://play.google.com/store/apps/details?id=com.oilbook.app&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding%26utm_content%3Dko">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8 1 .6l15.6-9.2c.4-.3.4-.9 0-1.2L5 2.2c-.5-.2-1 .1-1 .6z"/></svg>
+      Google Play에서 받기
+    </a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="follow">Checkpit 팔로우</p>
+    <div class="social">
+      <!-- Brand icons: Simple Icons (CC0 1.0), brand colors. -->
+      <a href="https://www.youtube.com/@Checkpit" rel="me" aria-label="YouTube의 Checkpit" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://www.instagram.com/checkpitapp/" rel="me" aria-label="Instagram의 Checkpit" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FF0069" d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a>
+      <a href="https://www.facebook.com/checkpit" rel="me" aria-label="Facebook의 Checkpit" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#0866FF" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+      <a href="https://x.com/CheckpitApp" rel="me" aria-label="X의 Checkpit" title="X"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px"><path fill="#000000" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+      <a href="https://www.threads.com/@checkpitapp" rel="me" aria-label="Threads의 Checkpit" title="Threads"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:22px;height:22px"><path fill="#000000" d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a>
+    </div>
+    <ul>
+      <li><a href="../../oilbook/community/">커뮤니티</a></li>
+      <li><a href="https://mirage-centipede-a12.notion.site/Oilbook-Privacy-policy-3ea21347a0b38114b0dfda39a0142aa0">개인정보처리방침</a></li>
+      <li><a href="https://mirage-centipede-a12.notion.site/Oilbook-Terms-of-use-3ea21347a0b381119f4acd703a5d60d7">이용약관</a></li>
+      <li><a href="https://mirage-centipede-a12.notion.site/Oilbook-Delete-account-3ea21347a0b381349fcce23ce81fdda6">계정 삭제</a></li>
+      <li><a href="mailto:jtw1508@naver.com?subject=Checkpit">jtw1508@naver.com</a></li>
+    </ul>
+    <p>Checkpit 알림은 편의 기능이며 전문가의 조언이 아닙니다. 항상 차량 취급설명서를 따르세요.</p>
+    <p>&copy; 2026 Twobridges. Google Play는 Google LLC의 상표입니다.</p>
+  </div>
+</footer>
+<script>
+document.querySelectorAll(".vid").forEach(function (box) {
+  var v = box.querySelector("video");
+  var b = box.querySelector(".snd");
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    v.removeAttribute("autoplay");
+    v.pause();
+  }
+  b.addEventListener("click", function () {
+    v.muted = !v.muted;
+    v.play();
+    b.setAttribute("aria-pressed", String(!v.muted));
+  });
+});
+</script>
+</body>
+</html>
